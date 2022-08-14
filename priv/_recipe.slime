@@ -1,5 +1,8 @@
 h1 = @recipe["recipe_name"]
 
+= if @recipe_image_path do
+  = responsive_image(@recipe_image_path)
+
 h2 Ingredients
 
 table

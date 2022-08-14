@@ -33,6 +33,9 @@ config :still,
   }
 ```
 
+With this pipeline, the file at `banana-bread.yml` would be available at <http://localhost:3000/banana-bread.html>.
+If there is also an image named `banana-bread.jpg`, it will be included in the output page as well.
+
 ## License
 
 MIT License
