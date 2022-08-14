@@ -1,0 +1,10 @@
+---
+layout: _layout.slime
+---
+
+h1.title Rosa's Cookbook
+
+.main
+  p This is where I keep my family recipes.
+
+  = include(@env, "_includes/footer.slime")

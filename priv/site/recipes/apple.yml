@@ -1,0 +1,8 @@
+recipe_name: Giving an Apple to a Friend
+ingredients:
+    - apple:
+        amounts:
+            - amount: 1
+              unit: each
+steps:
+    - step: Give an apple to a friend.
