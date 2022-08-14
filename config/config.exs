@@ -5,7 +5,14 @@ config :still,
   input: Path.join(Path.dirname(__DIR__), "priv/site"),
   output: Path.join(Path.dirname(__DIR__), "_site"),
   preprocessors: %{
-    ".yml" => [Still.Preprocessor.AddContent, StillRecipes.Preprocessor, Still.Preprocessor.Slime, Still.Preprocessor.OutputPath, Still.Preprocessor.Save]
+    ".yml" => [
+      Still.Preprocessor.AddContent,
+      StillRecipes.Preprocessor,
+      Still.Preprocessor.Slime,
+      Still.Preprocessor.OutputPath,
+      Still.Preprocessors.URLFingerprinting,
+      Still.Preprocessor.Save
+    ]
   }
 
 import_config("#{Mix.env()}.exs")

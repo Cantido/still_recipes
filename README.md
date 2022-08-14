@@ -21,7 +21,14 @@ Add the following to your Still configuration, this will render `.yml` files int
 ```elixir
 config :still,
   preprocessors: %{
-    ".yml" => [Still.Preprocessor.AddContent, StillRecipes.Preprocessor, Still.Preprocessor.Slime, Still.Preprocessor.OutputPath, Still.Preprocessor.Save]
+    ".yml" => [
+      Still.Preprocessor.AddContent,
+      StillRecipes.Preprocessor,
+      Still.Preprocessor.Slime,
+      Still.Preprocessor.OutputPath,
+      Still.Preprocessors.URLFingerprinting,
+      Still.Preprocessor.Save
+    ]
   }
 ```
 
