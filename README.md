@@ -2,6 +2,7 @@
 
 A [Still](stillstatic.io) preprocessor for [Open Recipe Format][orf] files.
 
+[orf]: https://open-recipe-format.readthedocs.io/en/latest/index.html
 ## Installation
 
 Add `still_recipes` as a dependency in `mix.exs`:
@@ -14,7 +15,6 @@ def deps do
 end
 ```
 
-## Usage
 
 Add the following to your Still configuration, this will render `.yml` files into structured `.html` files and show them on your website:
 
@@ -33,8 +33,36 @@ config :still,
   }
 ```
 
-With this pipeline, the file at `banana-bread.yml` would be available at <http://localhost:3000/banana-bread.html>.
-If there is also an image named `banana-bread.jpg`, it will be included in the output page as well.
+Also, copy your `priv/site/_layout.slime` to `priv/site/_recipe.slime` and customize to the layout you'd like to share between all your recipes.
+
+## Usage
+
+Create the `priv/site/recipes` directory in your Still project, then create the file `apple.yml`.
+
+```bash
+mkdir priv/site/recipes
+touch priv/site/recipes/apple.yml
+```
+
+Write your recipe to `priv/site/recipes/apple.yml` in [Open Recipe Format][orf].
+
+```yml
+recipe_name: Giving an Apple to a Friend
+ingredients:
+    - apple:
+        amounts:
+            - amount: 1
+              unit: each
+steps:
+    - step: Give an apple to a friend.
+```
+
+Run the Still dev server with `mix still.dev` and visit <http://localhost:3000/recipes/apple.html>.
+If there is also an image named `apple.jpg`, it will be included in the output page as well.
+
+```bash
+curl https://via.placeholder.com/150.jpg -O priv/site/recipes/apple.jpg
+```
 
 ## License
 

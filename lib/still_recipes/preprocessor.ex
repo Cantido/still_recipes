@@ -32,7 +32,10 @@ defmodule StillRecipes.Preprocessor do
 
     metadata =
       source_file.metadata
-      |> Map.merge(%{recipe: data})
+      |> Map.merge(%{
+        layout: "_recipe.slime",
+        recipe: data
+      })
       |> Map.merge(image_data)
 
     %{source_file |
