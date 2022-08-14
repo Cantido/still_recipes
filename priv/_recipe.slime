@@ -11,12 +11,20 @@ article.recipe.container.mx-auto
       th ingredient
       = for yield <- Map.get(@recipe, "yields", [%{"servings" => 1}]) do
         th #{yield["servings"]} servings
+      th notes
       = for ingredient <- @recipe["ingredients"] do
         tr
           = for {name, ingredient_data} <- ingredient do
-            td = name
+            td
+              .ingredient-name = name
+              .ingredient-processing = Map.get(ingredient_data, "processing", []) |> Enum.join(", ")
             = for amt <- ingredient_data["amounts"] do
               td #{amt["amount"]} #{amt["unit"]}
+            td
+              ul
+                = for note <- Map.get(ingredient_data, "notes", []) do
+                  li = note
+
 
   section.recipe-steps
     h2 Steps
