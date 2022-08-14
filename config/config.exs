@@ -10,7 +10,8 @@ config :still,
       StillRecipes.Preprocessor,
       Still.Preprocessor.Slime,
       Still.Preprocessor.OutputPath,
-      Still.Preprocessors.URLFingerprinting,
+      Still.Preprocessor.URLFingerprinting,
+      Still.Preprocessor.AddLayout,
       Still.Preprocessor.Save
     ]
   }
