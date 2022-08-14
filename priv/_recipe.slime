@@ -23,4 +23,10 @@ article.recipe.container.mx-auto
 
     ol
       = for step <- @recipe["steps"] do
-        li = step["step"]
+        li
+          .step-instruction = step["step"]
+          ul
+            = for step_note <- Map.get(step, "notes", []) do
+              li.step-note = step_note
+
+
