@@ -1,6 +1,6 @@
 # StillRecipes
 
-A [Still](stillstatic.io) preprocessor for [Open Recipe Format][orf] files.
+A [Still](https://stillstatic.io) preprocessor for [Open Recipe Format][orf] files.
 
 [orf]: https://open-recipe-format.readthedocs.io/en/latest/index.html
 ## Installation
