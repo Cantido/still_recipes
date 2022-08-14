@@ -10,4 +10,6 @@ html
     link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css" media="all"
     = link_to_css "css/theme.css", media: "all"
   body
+    = include(@env, "_includes/header.slime")
+    = include(@env, "_includes/nav.slime")
     = @children

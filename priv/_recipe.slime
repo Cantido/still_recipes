@@ -1,23 +1,26 @@
-h1 = @recipe["recipe_name"]
+article.recipe.container.mx-auto
+  h1 = @recipe["recipe_name"]
 
-= if @recipe_image_path do
-  = responsive_image(@recipe_image_path)
+  = if @recipe_image_path do
+    = responsive_image(@recipe_image_path)
 
-h2 Ingredients
+  section.recipe-ingredients
+    h2 Ingredients
 
-table
-  th ingredient
-  = for yield <- Map.get(@recipe, "yields", [%{"servings" => 1}]) do
-    th #{yield["servings"]} servings
-  = for ingredient <- @recipe["ingredients"] do
-    tr
-      = for {name, ingredient_data} <- ingredient do
-        td = name
-        = for amt <- ingredient_data["amounts"] do
-          td #{amt["amount"]} #{amt["unit"]}
+    table
+      th ingredient
+      = for yield <- Map.get(@recipe, "yields", [%{"servings" => 1}]) do
+        th #{yield["servings"]} servings
+      = for ingredient <- @recipe["ingredients"] do
+        tr
+          = for {name, ingredient_data} <- ingredient do
+            td = name
+            = for amt <- ingredient_data["amounts"] do
+              td #{amt["amount"]} #{amt["unit"]}
 
-h2 Steps
+  section.recipe-steps
+    h2 Steps
 
-ol
-  = for step <- @recipe["steps"] do
-    li = step["step"]
+    ol
+      = for step <- @recipe["steps"] do
+        li = step["step"]
