@@ -2,3 +2,4 @@
   = link @env, "Apple", to: "/recipes/apple.html"
   = link @env, "Basic Fruit Salad", to: "/recipes/basic-fruit-salad.html"
   = link @env, "Banana Bread", to: "/recipes/banana-bread.html"
+  = link @env, "Complex Apple", to: "/recipes/complex-apple.html"
