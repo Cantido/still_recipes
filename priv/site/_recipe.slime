@@ -7,7 +7,7 @@ html
     title Still
     meta charset="UTF-8"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    = link_to_css "css/normalize.css", media: "all"
+    link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css" media="all"
     = link_to_css "css/theme.css", media: "all"
   body
     = @children
