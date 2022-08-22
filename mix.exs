@@ -41,7 +41,7 @@ defmodule StillRecipes.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:still, "~> 0.7.0"},
+      {:still, "~> 0.8.0"},
       {:yaml_elixir, "~> 2.4"}
     ]
   end
